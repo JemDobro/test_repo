@@ -83,17 +83,43 @@ function daysInMonth(month, leapYear = false) {
   return `${month} has ${days} days`;
 }
 
-console.log(daysInMonth('january'));
-console.log(daysInMonth('february'));
-console.log(daysInMonth('february', true));
-console.log(daysInMonth('march'));
-console.log(daysInMonth('april'));
-console.log(daysInMonth('may'));
-console.log(daysInMonth('june'));
-console.log(daysInMonth('july'));
-console.log(daysInMonth('august'));
-console.log(daysInMonth('september'));
-console.log(daysInMonth('october'));
-console.log(daysInMonth('november'));
-console.log(daysInMonth('december'));
-console.log(daysInMonth('asdf'));
+// console.log(daysInMonth('january'));
+// console.log(daysInMonth('february'));
+// console.log(daysInMonth('february', true));
+// console.log(daysInMonth('march'));
+// console.log(daysInMonth('april'));
+// console.log(daysInMonth('may'));
+// console.log(daysInMonth('june'));
+// console.log(daysInMonth('july'));
+// console.log(daysInMonth('august'));
+// console.log(daysInMonth('september'));
+// console.log(daysInMonth('october'));
+// console.log(daysInMonth('november'));
+// console.log(daysInMonth('december'));
+// console.log(daysInMonth('asdf'));
+
+function roshambo(num) {
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    // console.log(randomNo);
+    let msg = "";
+    if (num > 0 && num < 4) {
+        if (num === randomNo) {
+            msg = 'tie';
+        } else if ((num === 1 || num === 3) && (randomNo === 3 || randomNo === 1)) {
+            msg = "Rock wins";
+        } else if ((num === 3 || num === 2) && (randomNo === 2 || randomNo === 3)) {
+            msg = "Scissors wins";
+        } else if ((num === 2 || num === 1) && (randomNo === 1 || randomNo === 2)) {
+            msg = "Paper wins";
+        }
+
+    } else {
+        console.error('Number must be 1, 2, or 3');
+    }
+    return msg;
+}
+console.log('Scissors ' + roshambo(3));
+console.log('Paper ' + roshambo(2));
+console.log('Rock ' + roshambo(1));
+// console.log(roshambo(-1));
+// console.log(roshambo(4));
