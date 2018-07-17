@@ -44,12 +44,56 @@ function decode(word) {
             return ' ';
     }    
 }
-console.log(decode('craft') 
-+ decode('block') 
-+ decode('argon') 
-+ decode('meter') 
-+ decode('bells') 
-+ decode('brown') 
-+ decode('croon') 
-+ decode('droop'));
+// console.log(decode('craft') 
+// + decode('block') 
+// + decode('argon') 
+// + decode('meter') 
+// + decode('bells') 
+// + decode('brown') 
+// + decode('croon') 
+// + decode('droop'));
 
+function daysInMonth(month, leapYear = false) {
+  let days = 0;
+  if (month === 'february' && leapYear === true) {
+    return `${month} with a leap year has 29 days`;
+  }
+  switch(month) {
+    case 'january':
+    case 'march':
+    case 'may':
+    case 'july':
+    case 'august':
+    case 'october':
+    case 'december':
+      days = 31;
+      break;
+    case 'april':
+    case 'june':
+    case 'september':
+    case 'november':
+      days = 30;
+      break;
+    case 'february':
+      days = 28;
+      break;
+    default:
+      return "Must provide a valid month.";
+  }
+  return `${month} has ${days} days`;
+}
+
+console.log(daysInMonth('january'));
+console.log(daysInMonth('february'));
+console.log(daysInMonth('february', true));
+console.log(daysInMonth('march'));
+console.log(daysInMonth('april'));
+console.log(daysInMonth('may'));
+console.log(daysInMonth('june'));
+console.log(daysInMonth('july'));
+console.log(daysInMonth('august'));
+console.log(daysInMonth('september'));
+console.log(daysInMonth('october'));
+console.log(daysInMonth('november'));
+console.log(daysInMonth('december'));
+console.log(daysInMonth('asdf'));
