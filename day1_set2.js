@@ -18,8 +18,38 @@ function beyond(num) {
   }
 }
 
-beyond(0);
-beyond(-5);
-beyond(5);
-beyond(Infinity);
-beyond(-Infinity);
+// beyond(0);
+// beyond(-5);
+// beyond(5);
+// beyond(Infinity);
+// beyond(-Infinity);
+
+
+function decode(word) {
+    let firstLetter = word.slice(0, 1);
+    switch(firstLetter) {
+        case 'a':
+            return word[1];
+            break;
+        case 'b':
+            return word[2];
+            break;
+        case 'c':
+            return word[3];
+            break;
+        case 'd':
+            return word[4];
+            break;
+        default:
+            return ' ';
+    }    
+}
+console.log(decode('craft') 
++ decode('block') 
++ decode('argon') 
++ decode('meter') 
++ decode('bells') 
++ decode('brown') 
++ decode('croon') 
++ decode('droop'));
+
